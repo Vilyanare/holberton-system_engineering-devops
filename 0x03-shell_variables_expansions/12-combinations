@@ -1,2 +1,3 @@
 #!/bin/bash
-echo -e "\n"{a..z}{a..z} | grep -v oo | tail -n +2
+printf "%s\n" {a..z}{a..z} | grep -v oo
+
