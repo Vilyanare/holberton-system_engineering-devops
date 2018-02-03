@@ -2,10 +2,9 @@
 #Prints Holberton School 9 times and hi once using while and if
 count=1
 while [ $count -le 10 ]; do
+    echo "Holberton School"
     if [ $count -eq 9 ]; then
         echo "Hi"
-    else
-        echo "Holberton School"
     fi
     let count+=1
 done
