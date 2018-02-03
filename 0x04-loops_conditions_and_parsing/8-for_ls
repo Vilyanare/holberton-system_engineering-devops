@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Display content of current directory
+for i in *; do
+    echo "$i" | cut -d- -f2
+done

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#display hour and minute
+minute=60
+hour=0
+while ((hour <= 12)) || ((minute < 60)); do
+    if [ $minute -eq 60 ]; then
+        ((minute = 0))
+        echo "Hour: $hour"
+        ((hour++))
+    else
+        echo "$minute"
+    fi
+    ((minute++))
+done
