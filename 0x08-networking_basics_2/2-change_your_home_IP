@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Changes local and facebook in hosts to 127.0.0.2 and 8.8.8.8 respectively
+sudo cp /etc/hosts ~/hosts.new
+if [ -n "$(grep 'localhost' /etc/hosts)" ]; then
+    sudo sed -i "/localhost/d" ~/hosts.new
+fi
+if [ -n "$(grep 'facebook.com' /etc/hosts)" ]; then
+    sudo sed -i "/facebook.com/d" ~/hosts.new
+fi
+sudo echo -e "127.0.0.2\tlocalhost" >> ~/hosts.new
+sudo echo -e "8.8.8.8\tfacebook.com" >> ~/hosts.new
+sudo cp -f ~/hosts.new /etc/hosts
+sudo rm ~/hosts.new
