@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # uninstalls nginx and reinstalls it then starts it
-sudo apt-get -y purge nginx-common nginx-full nginx
-sudo apt-get -y install nginx
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
