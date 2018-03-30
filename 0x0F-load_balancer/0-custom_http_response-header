@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs nginx and configures it to listen on port 80.  Returns "301 moved permanantly" from get requests
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo sed -i '30,36d' /etc/nginx/sites-available/default
+sudo sed -i '30i\\tlocation = / {\n\t\treturn 200 "Holberton School\\n";\n\t\tdefault_type text/plain;\n\t\tadd_header  X-Served-By  '$HOSTNAME';\n\t}\n' /etc/nginx/sites-available/default
+sudo sed -i '36i\\tlocation / {\n\t\treturn 404 "Ceci n'\''est pas une page\\n";\n\t\tadd_header  X-Served-By  '$HOSTNAME';\n\t}\n' /etc/nginx/sites-available/default
+sudo sed -i '41i\\tlocation /redirect_me {\n\t\treturn 301;\n\t\tdefault_type text/html;\n\t\tadd_header  X-Served-By  '$HOSTNAME';\n\t}\n' /etc/nginx/sites-available/default
+sudo service nginx restart
