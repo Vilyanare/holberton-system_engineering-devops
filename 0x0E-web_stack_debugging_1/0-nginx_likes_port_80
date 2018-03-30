@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# uninstalls nginx and reinstalls it then starts it
+# links available site to enabled default site
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
