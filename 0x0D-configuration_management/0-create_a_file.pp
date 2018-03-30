@@ -1,3 +1,4 @@
+# makes a file in /tmp/holberton containing I love Puppet
 file { '/tmp/holberton' :
   ensure  => file,
   path    => '/tmp/holberton',
