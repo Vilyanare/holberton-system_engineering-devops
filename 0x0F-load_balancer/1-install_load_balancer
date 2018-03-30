@@ -3,7 +3,7 @@
 sudo add-apt-repository -y ppa:vbernat/haproxy-1.7
 sudo apt -y update
 sudo apt -y install haproxy
-sudo echo 'global
+echo 'global
     log /dev/log    local0
     log /dev/log    local1 notice
     chroot /var/lib/haproxy
