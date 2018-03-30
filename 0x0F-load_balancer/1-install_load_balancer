@@ -41,3 +41,4 @@ backend nodes
    server 264-web-01 107.22.148.78:80 check
    server 264-web-02 54.204.244.213:80 check' >> /tmp/haproxy.cfg
 sudo mv /tmp/haproxy.cfg /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
