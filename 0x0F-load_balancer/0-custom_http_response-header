@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Installs nginx and configures it to listen on port 80.  Returns "301 moved permanantly" from get requests
-sudo apt-get install nginx
+sudo apt-get -y install nginx
 sudo sed -i "29i\\\t add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx restart
