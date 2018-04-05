@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# configures nginx service to run as non-root user
+pkill apache2
+chmod 644 /etc/nginx/nginx.conf
+FILE="/etc/nginx/sites-available/default"
+awk '/listen .*80 / { gsub(/80/, "8080")}1' "$FILE" | sudo tee "$FILE"
+sudo -H -u /usr/sbin/nginx

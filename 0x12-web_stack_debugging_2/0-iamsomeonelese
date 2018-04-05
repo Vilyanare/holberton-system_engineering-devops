@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# runs whoami cmd as another user
+sudo -H -u "$1" bash -c 'whoami'
