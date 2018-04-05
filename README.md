@@ -1,2 +1,2 @@
-# holberton-system_engineering-devops
-Learning the shell commands and scripting in linux
+# System engineering and devops
+Repository containing projects on system engineering and devops
