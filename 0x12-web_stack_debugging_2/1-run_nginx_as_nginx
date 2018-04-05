@@ -4,4 +4,4 @@ pkill apache2
 chmod 644 /etc/nginx/nginx.conf
 FILE="/etc/nginx/sites-available/default"
 awk '/listen .*80 / { gsub(/80/, "8080")}1' "$FILE" | sudo tee "$FILE"
-sudo -H -u /usr/sbin/nginx
+sudo -H -u nginx /usr/sbin/nginx
