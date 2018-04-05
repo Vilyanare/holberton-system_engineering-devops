@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# digs DNS servers of provided domain and subdomain then process output with awk
+dig +noall +answer www."$1" lb-01."$1" web-01."$1" web-02."$1" | \
+awk -v subdomain="$2" '$0 ~ subdomain { split($1, a, "."); print "The subdomain "a[1]" is a "$4" record and points to "$5}'
