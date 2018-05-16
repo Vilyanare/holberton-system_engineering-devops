@@ -1,3 +1,4 @@
+# Replaces the broken phpp string with php in /var/www/html/wp-settings.php
 file { '/var/www/html/wp-settings.php':
   ensure => present,
 }->
