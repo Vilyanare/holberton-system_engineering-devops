@@ -1,0 +1,49 @@
+user www-data;
+worker_processes 4;
+pid /run/nginx.pid;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+
+        server {
+                listen 80;
+
+                root /home/ubuntu/AirBnB_clone_v2/web_flask;
+
+                location /airbnb-onepage/ {
+                        proxy_pass http://0.0.0.0:8000/;
+                }
+        }
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # Logging Settings
+        ##
+
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+        ##
+        # Gzip Settings
+        ##
+
+        gzip on;
+        gzip_disable "msie6";
+}
